@@ -63,4 +63,20 @@ public class SinglyLinkedList<T> {
 
         this.head = newNode;
     }
+
+    public boolean contains(T data) {
+        if (this.head == null) {
+            return false;
+        }
+
+        SinglyNode<T> current = this.head;
+
+        while (current.getNextNode() != null) {
+            if (current.getData().equals(data)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
