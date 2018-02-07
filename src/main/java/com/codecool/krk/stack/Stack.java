@@ -55,12 +55,6 @@ public class Stack<T> {
         this.stack[this.top] = data;
     }
 
-    private void validateIsStackOverflow() throws StackOverflow {
-        if (this.top == this.size -1) {
-            throw new StackOverflow("Stack Overflow");
-        }
-    }
-
     public T pop() throws StackUnderflow {
         validateIsStackUnderflow();
 
@@ -78,6 +72,12 @@ public class Stack<T> {
         }
 
         return data;
+    }
+
+    private void validateIsStackOverflow() throws StackOverflow {
+        if (this.top == this.size -1) {
+            throw new StackOverflow("Stack Overflow");
+        }
     }
 
     private void validateIsStackUnderflow() throws StackUnderflow {
