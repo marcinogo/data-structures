@@ -51,6 +51,7 @@ public class SinglyLinkedList<T> {
             this.last.setNextNode(newNode);
         }
 
+        this.length++;
         this.last = newNode;
     }
 
@@ -63,6 +64,7 @@ public class SinglyLinkedList<T> {
             newNode.setNextNode(this.head);
         }
 
+        this.length++;
         this.head = newNode;
     }
 
@@ -94,6 +96,7 @@ public class SinglyLinkedList<T> {
         SinglyNode<T> toRemove = this.head;
         this.head = this.head.getNextNode();
 
+        this.length--;
         return toRemove;
     }
 
@@ -110,6 +113,7 @@ public class SinglyLinkedList<T> {
         }
 
         this.last = beforeLast;
+        this.length--;
         return toRemove;
     }
 
@@ -139,7 +143,7 @@ public class SinglyLinkedList<T> {
         }
 
         beforeToRemove.setNextNode(toRemove.getNextNode());
-
+        this.length--;
         return toRemove;
     }
 
