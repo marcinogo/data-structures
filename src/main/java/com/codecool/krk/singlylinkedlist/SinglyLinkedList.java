@@ -143,6 +143,15 @@ public class SinglyLinkedList<T> {
         return toRemove;
     }
 
+    public void insert(SinglyNode<T> previousNode, T data) {
+        SinglyNode<T> newNode = new SinglyNode<>(data);
+
+        newNode.setNextNode(previousNode.getNextNode());
+        previousNode.setNextNode(newNode);
+
+        this.length++;
+    }
+
     @Override
     public String toString() {
         StringBuilder listString = new StringBuilder("");
