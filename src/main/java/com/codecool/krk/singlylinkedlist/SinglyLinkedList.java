@@ -32,4 +32,9 @@ public class SinglyLinkedList<T> {
     public void setLength(int length) {
         this.length = length;
     }
+
+    // Implement to keep naming similar to Collection interface implementations
+    public int size() {
+        return getLength();
+    }
 }
