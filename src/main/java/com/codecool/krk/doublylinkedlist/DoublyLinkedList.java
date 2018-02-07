@@ -138,4 +138,17 @@ public class DoublyLinkedList<T> {
         this.length--;
         return toRemove;
     }
+
+    public DoublyNode<T> removeLast() throws NoSuchElementException{
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        DoublyNode<T> toRemove = this.tail;
+        this.tail = this.tail.getPreviousNode();
+        this.tail.setNextNode(null);
+
+        this.length--;
+        return toRemove;
+    }
 }
