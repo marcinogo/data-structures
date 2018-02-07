@@ -37,4 +37,18 @@ public class SinglyLinkedList<T> {
     public int size() {
         return getLength();
     }
+
+    public void append(T data) {
+        SinglyNode<T> newNode = new SinglyNode<>(data);
+
+        this.length++;
+
+        if (this.head == null) {
+            this.head = newNode;
+        } else {
+            this.last.setNextNode(newNode);
+        }
+
+        this.last = newNode;
+    }
 }
