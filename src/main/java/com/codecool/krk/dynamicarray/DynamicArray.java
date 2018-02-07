@@ -7,19 +7,24 @@ public class DynamicArray<T> {
     private int size;
     private T[] dynamicArray;
 
+    private int numberOfStoreData;
+
     public DynamicArray() {
+        this.numberOfStoreData = 0;
         this.FACTOR = 2;
         this.size = 16;
         this.dynamicArray = (T[]) new Object[this.size];
     }
 
     public DynamicArray(int size) {
+        this.numberOfStoreData = 0;
         this.FACTOR = 2;
         this.size = size;
         this.dynamicArray = (T[]) new Object[this.size];
     }
 
     public DynamicArray(int FACTOR, int size) {
+        this.numberOfStoreData = 0;
         this.FACTOR = FACTOR;
         this.size = size;
         this.dynamicArray = (T[]) new Object[this.size];
@@ -45,8 +50,17 @@ public class DynamicArray<T> {
         this.dynamicArray = dynamicArray;
     }
 
+    public int getNumberOfStoreData() {
+        return numberOfStoreData;
+    }
+
+    public void setNumberOfStoreData(int numberOfStoreData) {
+        this.numberOfStoreData = numberOfStoreData;
+    }
+
     // Implement to keep naming similar to Collection interface implementations
     public int size() {
         return getSize();
     }
+
 }
