@@ -57,4 +57,17 @@ public class DoublyLinkedList<T> {
 
         return false;
     }
+
+    public DoublyNode<T> search(T data) {
+        if (!contains(data)) {
+            return null;
+        }
+
+        DoublyNode<T> searchedNode = this.head;
+
+        while (!searchedNode.getData().equals(data)) {
+            searchedNode = searchedNode.getNextNode();
+        }
+        return searchedNode;
+    }
 }
