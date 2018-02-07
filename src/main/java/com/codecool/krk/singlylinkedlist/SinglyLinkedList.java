@@ -125,4 +125,21 @@ public class SinglyLinkedList<T> {
         }
         return searchedNode;
     }
+
+    public SinglyNode<T> remove(T data) throws NoSuchElementException {
+        if (!contains(data)) {
+            throw new NoSuchElementException();
+        }
+
+        SinglyNode<T> toRemove = search(data);
+        SinglyNode<T> beforeToRemove = this.head;
+
+        while (!beforeToRemove.getNextNode().equals(toRemove)) {
+            beforeToRemove = beforeToRemove.getNextNode();
+        }
+
+        beforeToRemove.setNextNode(toRemove.getNextNode());
+
+        return toRemove;
+    }
 }
