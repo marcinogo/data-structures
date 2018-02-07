@@ -111,4 +111,16 @@ public class DoublyLinkedList<T> {
         this.length++;
         this.head = newNode;
     }
+
+    public void insert(DoublyNode<T> previousNode, T data) {
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+
+        newNode.setPreviousNode(previousNode);
+        newNode.setNextNode(previousNode.getNextNode());
+
+        previousNode.getNextNode().setPreviousNode(newNode);
+        previousNode.setNextNode(newNode);
+
+        this.length++;
+    }
 }
