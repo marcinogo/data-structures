@@ -6,4 +6,16 @@ public class DynamicArray<T> {
 
     private int size;
     private T[] dynamicArray;
+
+    public DynamicArray() {
+        this.FACTOR = 2;
+        this.size = 16;
+        this.dynamicArray = (T[]) new Object[this.size];
+    }
+
+    public DynamicArray(int FACTOR, int size) {
+        this.FACTOR = FACTOR;
+        this.size = size;
+        this.dynamicArray = (T[]) new Object[this.size];
+    }
 }
