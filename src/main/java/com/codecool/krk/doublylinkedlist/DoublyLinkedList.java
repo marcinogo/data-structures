@@ -4,4 +4,8 @@ public class DoublyLinkedList<T> {
     private DoublyNode<T> head;
     private DoublyNode<T> last;
     private int length;
+
+    public DoublyLinkedList() {
+        this.length = 0;
+    }
 }
