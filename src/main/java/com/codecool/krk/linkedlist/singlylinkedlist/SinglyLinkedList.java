@@ -1,4 +1,4 @@
-package com.codecool.krk.singlylinkedlist;
+package com.codecool.krk.linkedlist.singlylinkedlist;
 
 import java.util.NoSuchElementException;
 

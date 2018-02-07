@@ -1,4 +1,4 @@
-package com.codecool.krk.doublylinkedlist;
+package com.codecool.krk.linkedlist.doublylinkedlist;
 
 public class DoublyNode<T> {
     private T data;
