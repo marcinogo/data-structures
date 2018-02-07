@@ -90,11 +90,24 @@ public class DynamicArray<T> {
         for (int i = index; i < this.numberOfStoreData - 2; i++) {
             this.dynamicArray[index] = this.dynamicArray[index - 1];
         }
-        
+
         this.dynamicArray[this.numberOfStoreData - 1] = null;
         numberOfStoreData--;
 
         return dataToRemove;
+    }
+
+    public void insert(int index, T data) {
+        validateIndex(index);
+
+        this.numberOfStoreData++;
+        resize();
+
+        for (int i = this.numberOfStoreData - 1; i > index; i--) {
+            this.dynamicArray[i] = this.dynamicArray[i - 1];
+        }
+
+        this.dynamicArray[index] = data;
     }
 
     private void resize() {
