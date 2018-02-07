@@ -97,4 +97,18 @@ public class DoublyLinkedList<T> {
         this.length++;
         this.tail = newNode;
     }
+
+    public void prepend(T data) {
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+
+        if (this.tail == null) {
+            this.tail = newNode;
+        } else {
+            this.head.setPreviousNode(newNode);
+            newNode.setNextNode(this.head);
+        }
+
+        this.length++;
+        this.head = newNode;
+    }
 }
