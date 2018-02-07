@@ -1,5 +1,7 @@
 package com.codecool.krk.stack;
 
+import com.codecool.krk.stack.customexception.StackOverflow;
+
 public class Stack<T> {
     private T[] stack;
     private int size;
@@ -44,5 +46,11 @@ public class Stack<T> {
     public int getStackFreeSpace() {
         int numberOfElementsInStack = this.top + 1;
         return this.size - numberOfElementsInStack;
+    }
+
+    public void push(T data) throws StackOverflow {
+        validateStackOverflow();
+        this.top++;
+        this.stackArray[this.top] = data;
     }
 }
