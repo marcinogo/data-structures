@@ -143,7 +143,7 @@ public class SinglyLinkedList<T> {
 
             beforeToRemove.setNextNode(toRemove.getNextNode());
         } else {
-            this.head = toRemove.getNextNode();
+            this.head = this.head.getNextNode();
         }
 
         this.length--;
