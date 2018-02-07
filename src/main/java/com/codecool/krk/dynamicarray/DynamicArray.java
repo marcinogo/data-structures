@@ -73,8 +73,19 @@ public class DynamicArray<T> {
         if (this.numberOfStoreData == this.size) {
             this.size = this.size * this.FACTOR;
 
-            // This can be done by using external library
-            this.dynamicArray = copyArray(this.dynamicArray, this.size);
+            this.dynamicArray = copyArray();
         }
+    }
+
+    // This can be done by using external library
+    private T[] copyArray() {
+        T[] biggerArrayCopy = (T[]) new Object[this.size];
+        int oldSize = this.dynamicArray.length;
+
+        for (int i = 0; i < oldSize; i++) {
+            biggerArrayCopy[i] = this.dynamicArray[i];
+        }
+
+        return biggerArrayCopy;
     }
 }
