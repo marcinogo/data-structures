@@ -7,4 +7,20 @@ public class SinglyNode<T> {
     public SinglyNode(T data) {
         this.data = data;
     }
+
+    public T getData() {
+        return data;
+    }
+
+    public void setData(T data) {
+        this.data = data;
+    }
+
+    public SinglyNode<T> getNextNode() {
+        return nextNode;
+    }
+
+    public void setNextNode(SinglyNode<T> nextNode) {
+        this.nextNode = nextNode;
+    }
 }
