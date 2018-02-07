@@ -136,11 +136,16 @@ public class SinglyLinkedList<T> {
         SinglyNode<T> toRemove = search(data);
         SinglyNode<T> beforeToRemove = this.head;
 
-        while (!beforeToRemove.getNextNode().equals(toRemove)) {
-            beforeToRemove = beforeToRemove.getNextNode();
+        if (!toRemove.equals(this.head)) {
+            while (!beforeToRemove.getNextNode().equals(toRemove)) {
+                beforeToRemove = beforeToRemove.getNextNode();
+            }
+
+            beforeToRemove.setNextNode(toRemove.getNextNode());
+        } else {
+            this.head = toRemove.getNextNode();
         }
 
-        beforeToRemove.setNextNode(toRemove.getNextNode());
         this.length--;
         return toRemove;
     }
