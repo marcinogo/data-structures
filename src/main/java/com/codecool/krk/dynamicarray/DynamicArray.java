@@ -63,4 +63,9 @@ public class DynamicArray<T> {
         return getSize();
     }
 
+    public void add(T data) {
+        this.numberOfStoreData++;
+        resize();
+        this.dynamicArray[this.numberOfStoreData - 1] = data;
+    }
 }
