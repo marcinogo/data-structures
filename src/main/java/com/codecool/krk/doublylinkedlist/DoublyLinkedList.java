@@ -151,4 +151,29 @@ public class DoublyLinkedList<T> {
         this.length--;
         return toRemove;
     }
+
+    public DoublyNode<T> remove(T data) throws NoSuchElementException {
+        if (!contains(data)) {
+            throw new NoSuchElementException();
+        }
+
+        DoublyNode<T> toRemove = search(data);
+        DoublyNode<T> previousNode = toRemove.getPreviousNode();
+        DoublyNode<T> nextNode = toRemove.getNextNode();
+        
+        if (!toRemove.equals(this.head)) {
+            previousNode.setNextNode(null);
+        } else {
+            this.head = nextNode;
+        }
+
+        if (!toRemove.equals(this.tail)) {
+            nextNode.setPreviousNode(null);
+        } else {
+            this.tail = previousNode;
+        }
+
+        this.length--;
+        return toRemove;
+    }
 }
