@@ -65,7 +65,7 @@ public class SinglyLinkedList<T> {
     }
 
     public boolean contains(T data) {
-        if (this.head == null) {
+        if (isEmpty()) {
             return false;
         }
 
@@ -78,5 +78,9 @@ public class SinglyLinkedList<T> {
         }
 
         return false;
+    }
+
+    public boolean isEmpty() {
+        return this.head == null;
     }
 }
