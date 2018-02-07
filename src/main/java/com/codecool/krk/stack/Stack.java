@@ -70,6 +70,16 @@ public class Stack<T> {
         return data;
     }
 
+    public T peek() {
+        T data = null;
+
+        if (this.top >= 0) {
+            data = this.stack[this.top];
+        }
+
+        return data;
+    }
+
     private void validateIsStackUnderflow() throws StackUnderflow {
         if (this.top == -1) {
             throw new StackUnderflow("Stack Underflow");
