@@ -93,7 +93,23 @@ public class SinglyLinkedList<T> {
 
         SinglyNode<T> toRemove = this.head;
         this.head = this.head.getNextNode();
-        
+
+        return toRemove;
+    }
+
+    public SinglyNode<T> removeLast() throws NoSuchElementException{
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        SinglyNode<T> toRemove = this.last;
+        SinglyNode<T> beforeLast = this.head;
+
+        while (beforeLast.getNextNode().equals(this.last)) {
+            beforeLast = beforeLast.getNextNode();
+        }
+
+        this.last = beforeLast;
         return toRemove;
     }
 }
