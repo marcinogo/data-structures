@@ -49,8 +49,14 @@ public class Stack<T> {
     }
 
     public void push(T data) throws StackOverflow {
-        validateStackOverflow();
+        validateIsStackOverflow();
         this.top++;
-        this.stackArray[this.top] = data;
+        this.stack[this.top] = data;
+    }
+
+    private void validateIsStackOverflow() throws StackOverflow {
+        if (this.top == this.size -1) {
+            throw new StackOverflow("Stack Overflow");
+        }
     }
 }
