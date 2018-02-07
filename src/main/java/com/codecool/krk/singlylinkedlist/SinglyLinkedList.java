@@ -43,8 +43,6 @@ public class SinglyLinkedList<T> {
     public void append(T data) {
         SinglyNode<T> newNode = new SinglyNode<>(data);
 
-        this.length++;
-
         if (this.head == null) {
             this.head = newNode;
         } else {
