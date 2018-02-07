@@ -68,4 +68,13 @@ public class DynamicArray<T> {
         resize();
         this.dynamicArray[this.numberOfStoreData - 1] = data;
     }
+
+    private void resize() {
+        if (this.numberOfStoreData == this.size) {
+            this.size = this.size * this.FACTOR;
+
+            // This can be done by using external library
+            this.dynamicArray = copyArray(this.dynamicArray, this.size);
+        }
+    }
 }
