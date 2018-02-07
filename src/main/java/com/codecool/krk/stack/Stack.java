@@ -65,8 +65,14 @@ public class Stack<T> {
         validateIsStackUnderflow();
 
         T data = this.stack[this.top];
-        this.stackTopIndex--;
+        this.top--;
 
         return data;
+    }
+
+    private void validateIsStackUnderflow() throws StackUnderflow {
+        if (this.top == -1) {
+            throw new StackUnderflow("Stack Underflow");
+        }
     }
 }
