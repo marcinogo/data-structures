@@ -24,4 +24,24 @@ public class DynamicArray<T> {
         this.size = size;
         this.dynamicArray = (T[]) new Object[this.size];
     }
+
+    public int getFACTOR() {
+        return FACTOR;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
+    public void setSize(int size) {
+        this.size = size;
+    }
+
+    public T[] getDynamicArray() {
+        return dynamicArray;
+    }
+
+    public void setDynamicArray(T[] dynamicArray) {
+        this.dynamicArray = dynamicArray;
+    }
 }
