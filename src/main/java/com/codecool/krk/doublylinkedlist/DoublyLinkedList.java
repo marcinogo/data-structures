@@ -37,4 +37,8 @@ public class DoublyLinkedList<T> {
     public int size() {
         return getLength();
     }
+
+    public boolean isEmpty() {
+        return this.head == null;
+    }
 }
