@@ -51,4 +51,16 @@ public class SinglyLinkedList<T> {
 
         this.last = newNode;
     }
+
+    public void prepend(T data) {
+        SinglyNode<T> newNode = new SinglyNode<>(data);
+
+        if (this.last == null) {
+            this.last = newNode;
+        } else {
+            newNode.setNextNode(this.head);
+        }
+
+        this.head = newNode;
+    }
 }
