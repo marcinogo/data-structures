@@ -70,9 +70,7 @@ public class DynamicArray<T> {
     }
 
     public T get(int index) throws ArrayIndexOutOfBoundsException {
-        if (index < 0 || index >= this.numberOfStoreData - 1) {
-            throw new ArrayIndexOutOfBoundsException();
-        }
+        validateIndex(index);
 
         return this.dynamicArray[index];
     }
@@ -95,5 +93,11 @@ public class DynamicArray<T> {
         }
 
         return biggerArrayCopy;
+    }
+
+    private void validateIndex(int index) throws ArrayIndexOutOfBoundsException  {
+        if (index < 0 || index >= this.numberOfStoreData - 1) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
     }
 }
