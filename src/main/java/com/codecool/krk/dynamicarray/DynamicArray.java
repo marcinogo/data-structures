@@ -13,6 +13,12 @@ public class DynamicArray<T> {
         this.dynamicArray = (T[]) new Object[this.size];
     }
 
+    public DynamicArray(int size) {
+        this.FACTOR = 2;
+        this.size = size;
+        this.dynamicArray = (T[]) new Object[this.size];
+    }
+
     public DynamicArray(int FACTOR, int size) {
         this.FACTOR = FACTOR;
         this.size = size;
