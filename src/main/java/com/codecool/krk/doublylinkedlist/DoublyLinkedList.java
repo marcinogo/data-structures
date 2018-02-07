@@ -1,5 +1,7 @@
 package com.codecool.krk.doublylinkedlist;
 
+import java.util.NoSuchElementException;
+
 public class DoublyLinkedList<T> {
     private DoublyNode<T> head;
     private DoublyNode<T> tail;
@@ -122,5 +124,18 @@ public class DoublyLinkedList<T> {
         previousNode.setNextNode(newNode);
 
         this.length++;
+    }
+
+    public DoublyNode<T> removeFirst() throws NoSuchElementException {
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        DoublyNode<T> toRemove = this.head;
+        this.head = this.head.getNextNode();
+        this.head.setPreviousNode(null);
+
+        this.length--;
+        return toRemove;
     }
 }
