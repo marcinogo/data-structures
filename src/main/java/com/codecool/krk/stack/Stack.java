@@ -40,4 +40,9 @@ public class Stack<T> {
     public int size() {
         return getSize();
     }
+
+    public int getStackFreeSpace() {
+        int numberOfElementsInStack = this.top + 1;
+        return this.size - numberOfElementsInStack;
+    }
 }
