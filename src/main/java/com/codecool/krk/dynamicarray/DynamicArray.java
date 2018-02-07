@@ -44,4 +44,9 @@ public class DynamicArray<T> {
     public void setDynamicArray(T[] dynamicArray) {
         this.dynamicArray = dynamicArray;
     }
+
+    // Implement to keep naming similar to Collection interface implementations
+    public int size() {
+        return getSize();
+    }
 }
