@@ -35,4 +35,9 @@ public class Stack<T> {
     public void setTop(int top) {
         this.top = top;
     }
+
+    // Implement to keep naming similar to Collection interface implementations
+    public int size() {
+        return getSize();
+    }
 }
