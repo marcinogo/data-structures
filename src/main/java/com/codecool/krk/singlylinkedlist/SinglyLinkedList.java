@@ -1,5 +1,7 @@
 package com.codecool.krk.singlylinkedlist;
 
+import java.util.NoSuchElementException;
+
 public class SinglyLinkedList<T> {
     private SinglyNode<T> head;
     private SinglyNode<T> last;
@@ -82,5 +84,16 @@ public class SinglyLinkedList<T> {
 
     public boolean isEmpty() {
         return this.head == null;
+    }
+
+    public SinglyNode<T> removeFirst() throws NoSuchElementException{
+        if (isEmpty()) {
+            throw new NoSuchElementException();
+        }
+
+        SinglyNode<T> toRemove = this.head;
+        this.head = this.head.getNextNode();
+        
+        return toRemove;
     }
 }
