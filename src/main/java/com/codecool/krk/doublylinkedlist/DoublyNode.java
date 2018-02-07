@@ -5,4 +5,10 @@ public class DoublyNode<T> {
     private DoublyNode<T> nextNode;
     private DoublyNode<T> previousNode;
 
+    public DoublyNode() {
+    }
+
+    public DoublyNode(T data) {
+        this.data = data;
+    }
 }
