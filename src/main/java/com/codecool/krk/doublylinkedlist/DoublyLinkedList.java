@@ -83,4 +83,18 @@ public class DoublyLinkedList<T> {
         }
         return listString.toString();
     }
+
+    public void append(T data) {
+        DoublyNode<T> newNode = new DoublyNode<>(data);
+
+        if (this.head == null) {
+            this.head = newNode;
+        } else {
+            newNode.setPreviousNode(this.tail);
+            this.tail.setNextNode(newNode);
+        }
+
+        this.length++;
+        this.tail = newNode;
+    }
 }
