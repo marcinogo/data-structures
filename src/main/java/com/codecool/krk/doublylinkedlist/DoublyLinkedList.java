@@ -70,4 +70,17 @@ public class DoublyLinkedList<T> {
         }
         return searchedNode;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder listString = new StringBuilder("");
+        DoublyNode<T> temp = this.head;
+
+        while (temp != null) {
+            listString.append(" ");
+            listString.append(temp.getData());
+            temp = temp.getNextNode();
+        }
+        return listString.toString();
+    }
 }
