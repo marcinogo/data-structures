@@ -41,4 +41,20 @@ public class DoublyLinkedList<T> {
     public boolean isEmpty() {
         return this.head == null;
     }
+
+    public boolean contains(T data) {
+        if (isEmpty()) {
+            return false;
+        }
+
+        DoublyNode<T> current = this.head;
+
+        while (current.getNextNode() != null) {
+            if (current.getData().equals(data)) {
+                return true;
+            }
+        }
+
+        return false;
+    }
 }
