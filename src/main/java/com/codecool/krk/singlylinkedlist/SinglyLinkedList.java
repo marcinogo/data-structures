@@ -112,4 +112,17 @@ public class SinglyLinkedList<T> {
         this.last = beforeLast;
         return toRemove;
     }
+
+    public SinglyNode<T> search(T data) {
+        if (!contains(data)) {
+            return null;
+        }
+
+        SinglyNode<T> searchedNode = this.head;
+
+        while (!searchedNode.getData().equals(data)) {
+            searchedNode = searchedNode.getNextNode();
+        }
+        return searchedNode;
+    }
 }
