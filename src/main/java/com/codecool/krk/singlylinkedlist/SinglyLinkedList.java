@@ -142,4 +142,17 @@ public class SinglyLinkedList<T> {
 
         return toRemove;
     }
+
+    @Override
+    public String toString() {
+        StringBuilder listString = new StringBuilder("");
+        SinglyNode<T> temp = this.head;
+
+        while (temp != null) {
+            listString.append(" ");
+            listString.append(temp.getData());
+            temp = temp.getNextNode();
+        }
+        return listString.toString();
+    }
 }
