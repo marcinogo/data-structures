@@ -69,6 +69,14 @@ public class DynamicArray<T> {
         this.dynamicArray[this.numberOfStoreData - 1] = data;
     }
 
+    public T get(int index) throws ArrayIndexOutOfBoundsException {
+        if (index < 0 || index >= this.numberOfStoreData - 1) {
+            throw new ArrayIndexOutOfBoundsException();
+        }
+
+        return this.dynamicArray[index];
+    }
+
     private void resize() {
         if (this.numberOfStoreData == this.size) {
             this.size = this.size * this.FACTOR;
