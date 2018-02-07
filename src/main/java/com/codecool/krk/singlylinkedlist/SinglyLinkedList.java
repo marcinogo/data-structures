@@ -4,7 +4,7 @@ import java.util.NoSuchElementException;
 
 public class SinglyLinkedList<T> {
     private SinglyNode<T> head;
-    private SinglyNode<T> last;
+    private SinglyNode<T> tail;
     private int length;
 
     public SinglyLinkedList() {
@@ -19,12 +19,12 @@ public class SinglyLinkedList<T> {
         this.head = head;
     }
 
-    public SinglyNode<T> getLast() {
-        return last;
+    public SinglyNode<T> getTail() {
+        return tail;
     }
 
-    public void setLast(SinglyNode<T> last) {
-        this.last = last;
+    public void setTail(SinglyNode<T> tail) {
+        this.tail = tail;
     }
 
     public int getLength() {
@@ -46,18 +46,18 @@ public class SinglyLinkedList<T> {
         if (this.head == null) {
             this.head = newNode;
         } else {
-            this.last.setNextNode(newNode);
+            this.tail.setNextNode(newNode);
         }
 
         this.length++;
-        this.last = newNode;
+        this.tail = newNode;
     }
 
     public void prepend(T data) {
         SinglyNode<T> newNode = new SinglyNode<>(data);
 
-        if (this.last == null) {
-            this.last = newNode;
+        if (this.tail == null) {
+            this.tail = newNode;
         } else {
             newNode.setNextNode(this.head);
         }
@@ -103,14 +103,14 @@ public class SinglyLinkedList<T> {
             throw new NoSuchElementException();
         }
 
-        SinglyNode<T> toRemove = this.last;
+        SinglyNode<T> toRemove = this.tail;
         SinglyNode<T> beforeLast = this.head;
 
-        while (beforeLast.getNextNode().equals(this.last)) {
+        while (beforeLast.getNextNode().equals(this.tail)) {
             beforeLast = beforeLast.getNextNode();
         }
 
-        this.last = beforeLast;
+        this.tail = beforeLast;
         this.length--;
         return toRemove;
     }
