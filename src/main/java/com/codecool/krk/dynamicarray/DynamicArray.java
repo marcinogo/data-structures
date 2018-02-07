@@ -79,7 +79,21 @@ public class DynamicArray<T> {
         T dataToRemove = this.dynamicArray[this.numberOfStoreData - 1];
         this.dynamicArray[this.numberOfStoreData - 1] = null;
         numberOfStoreData--;
+
+        return dataToRemove;
+    }
+
+    public T remove(int index) {
+        validateIndex(index);
+        T dataToRemove = this.dynamicArray[index];
+
+        for (int i = index; i < this.numberOfStoreData - 2; i++) {
+            this.dynamicArray[index] = this.dynamicArray[index - 1];
+        }
         
+        this.dynamicArray[this.numberOfStoreData - 1] = null;
+        numberOfStoreData--;
+
         return dataToRemove;
     }
 
