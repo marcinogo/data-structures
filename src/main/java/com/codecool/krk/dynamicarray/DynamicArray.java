@@ -75,6 +75,14 @@ public class DynamicArray<T> {
         return this.dynamicArray[index];
     }
 
+    public T remove() {
+        T dataToRemove = this.dynamicArray[this.numberOfStoreData - 1];
+        this.dynamicArray[this.numberOfStoreData - 1] = null;
+        numberOfStoreData--;
+        
+        return dataToRemove;
+    }
+
     private void resize() {
         if (this.numberOfStoreData == this.size) {
             this.size = this.size * this.FACTOR;
