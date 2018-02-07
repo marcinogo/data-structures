@@ -4,6 +4,9 @@ public class SinglyNode<T> {
     private T data;
     private SinglyNode<T> nextNode;
 
+    public SinglyNode() {
+    }
+
     public SinglyNode(T data) {
         this.data = data;
     }
