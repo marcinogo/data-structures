@@ -1,6 +1,7 @@
 package com.codecool.krk.stack;
 
 import com.codecool.krk.stack.customexception.StackOverflow;
+import com.codecool.krk.stack.customexception.StackUnderflow;
 
 public class Stack<T> {
     private T[] stack;
@@ -58,5 +59,14 @@ public class Stack<T> {
         if (this.top == this.size -1) {
             throw new StackOverflow("Stack Overflow");
         }
+    }
+
+    public T pop() throws StackUnderflow {
+        validateIsStackUnderflow();
+
+        T data = this.stack[this.top];
+        this.stackTopIndex--;
+
+        return data;
     }
 }
