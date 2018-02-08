@@ -18,4 +18,8 @@ public class BinarySearchTree {
     public void add(Integer data) {
         this.root.add(data);
     }
+
+    public boolean contains(Integer value) {
+        return this.root.contains(data);
+    }
 }
