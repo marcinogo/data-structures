@@ -1,5 +1,7 @@
 package com.codecool.krk.queue;
 
+import com.codecool.krk.queue.customexception.EmptyQueueException;
+
 public class Queue<T> {
     private int size;
     private Node<T> head;
@@ -52,5 +54,15 @@ public class Queue<T> {
         this.tail.setNextNode(newNode);
         this.tail = newNode;
         this.size++;
+    }
+
+    public Node<T> dequeue() throws EmptyQueueException {
+        validateQueueIsNotEmpty();
+
+        Node<T> nodeToDequeue = this.head;
+        this.head = this.head.getNextNode();
+        this.size--;
+
+        return nodeToDequeue;
     }
 }
