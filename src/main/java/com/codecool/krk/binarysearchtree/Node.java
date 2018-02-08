@@ -66,4 +66,16 @@ public class Node {
             return this.right.contains(searchData);
         }
     }
+
+    public void printInOrderPrint() {
+        if (this.left != null) {
+            this.left.printInOrderPrint();
+        }
+
+        System.out.println(this.value);
+
+        if (this.right != null) {
+            this.right.printInOrderPrint();
+        }
+    }
 }
