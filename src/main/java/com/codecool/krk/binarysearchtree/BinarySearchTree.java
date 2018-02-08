@@ -22,4 +22,8 @@ public class BinarySearchTree {
     public boolean contains(Integer value) {
         return this.root.contains(value);
     }
+
+    public void printInOrderPrint() {
+        this.root.printInOrderPrint();
+    }
 }
