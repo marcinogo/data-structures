@@ -66,6 +66,12 @@ public class Queue<T> {
         return nodeToDequeue;
     }
 
+    public Node<T> peek() throws EmptyQueueException {
+        validateQueueIsNotEmpty();
+
+        return this.head;
+    }
+
     private void validateQueueIsNotEmpty() throws EmptyQueueException{
         if (isEmpty()) {
             throw new EmptyQueueException("Queue is empty");
