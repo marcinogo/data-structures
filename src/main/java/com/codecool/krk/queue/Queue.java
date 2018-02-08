@@ -41,4 +41,16 @@ public class Queue<T> {
     public boolean isEmpty() {
         return this.head == null;
     }
+
+    public void enqueue(T data) {
+        Node<T> newNode = new Node<>(data);
+
+        if (this.head == null) {
+            this.head = newNode;
+        }
+
+        this.tail.setNextNode(newNode);
+        this.tail = newNode;
+        this.size++;
+    }
 }
