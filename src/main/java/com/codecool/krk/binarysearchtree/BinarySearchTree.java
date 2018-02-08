@@ -20,6 +20,6 @@ public class BinarySearchTree {
     }
 
     public boolean contains(Integer value) {
-        return this.root.contains(data);
+        return this.root.contains(value);
     }
 }
