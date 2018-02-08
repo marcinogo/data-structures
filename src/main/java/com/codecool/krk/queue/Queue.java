@@ -32,4 +32,9 @@ public class Queue<T> {
     public void setTail(Node<T> tail) {
         this.tail = tail;
     }
+
+    // Implement to keep naming similar to Collection interface implementations
+    public int size() {
+        return getSize();
+    }
 }
