@@ -10,4 +10,12 @@ public class BinarySearchTree {
     public BinarySearchTree(Integer value) {
         this.root = new Node(value);
     }
+
+    public Node getRoot() {
+        return root;
+    }
+
+    public void setRoot(Node root) {
+        this.root = root;
+    }
 }
