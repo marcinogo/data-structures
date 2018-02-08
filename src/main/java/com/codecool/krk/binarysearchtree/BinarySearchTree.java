@@ -18,4 +18,8 @@ public class BinarySearchTree {
     public void setRoot(Node root) {
         this.root = root;
     }
+
+    public void add(Integer data) {
+        this.root.add(data);
+    }
 }
