@@ -26,7 +26,12 @@ public class BinarySearchTree {
     public void printInOrderPrint() {
         this.root.printInOrderPrint();
     }
-    public static BinarySearchTree createBinarySearchTree(int[] sortedArray) {
+
+    public static BinarySearchTree createBinarySearchTree(int[] sortedArray) throws IllegalArgumentException{
+        if (sortedArray == null) {
+            throw new IllegalArgumentException();
+        }
+        
         int middle = (int) Math.floor(sortedArray.length / 2);
         BinarySearchTree newBinarySearchTree = new BinarySearchTree(sortedArray[middle]);
 
