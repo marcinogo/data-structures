@@ -26,4 +26,18 @@ public class BinarySearchTree {
     public void printInOrderPrint() {
         this.root.printInOrderPrint();
     }
+    public static BinarySearchTree createBinarySearchTree(int[] sortedArray) {
+        int middle = (int) Math.floor(sortedArray.length / 2);
+        BinarySearchTree newBinarySearchTree = new BinarySearchTree(sortedArray[middle]);
+
+        for (int i = 0; i < middle; i++) {
+            newBinarySearchTree.add(sortedArray[i]);
+        }
+
+        for (int i = middle + 1; i < sortedArray.length; i++) {
+            newBinarySearchTree.add(sortedArray[i]);
+        }
+
+        return newBinarySearchTree;
+    }
 }
