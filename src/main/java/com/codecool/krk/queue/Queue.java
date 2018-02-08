@@ -65,4 +65,11 @@ public class Queue<T> {
 
         return nodeToDequeue;
     }
+
+    private void validateQueueIsNotEmpty() throws EmptyQueueException{
+        if (isEmpty()) {
+            throw new EmptyQueueException("Queue is empty");
+        }
+    }
+
 }
