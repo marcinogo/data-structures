@@ -32,4 +32,20 @@ public class Node {
     public void setRight(Node right) {
         this.right = right;
     }
+
+    public void add(Integer newData) {
+        if (newData <= this.value) {
+            if (this.left == null) {
+                this.left = new Node(newData);
+            } else {
+                this.left.add(newData);
+            }
+        } else {
+            if (this.right == null) {
+                this.right = new Node(newData);
+            } else {
+                this.right.add(newData);
+            }
+        }
+    }
 }
