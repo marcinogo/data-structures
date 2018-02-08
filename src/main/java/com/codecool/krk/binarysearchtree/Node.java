@@ -48,4 +48,22 @@ public class Node {
             }
         }
     }
+
+    public boolean contains(Integer searchData) {
+        if (this.value.equals(searchData)) {
+            return true;
+        }
+
+        if (searchData < this.value) {
+            if (this.left == null) {
+                return false;
+            }
+            return this.left.contains(searchData);
+        } else {
+            if (this.right == null) {
+                return false;
+            }
+            return this.right.contains(searchData);
+        }
+    }
 }
