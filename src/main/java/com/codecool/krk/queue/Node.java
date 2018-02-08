@@ -2,7 +2,7 @@ package com.codecool.krk.queue;
 
 public class Node<T> {
     private T data;
-    private Node nextNode;
+    private Node<T> nextNode;
 
     public Node(T data) {
         this.data = data;
@@ -16,7 +16,7 @@ public class Node<T> {
         this.data = data;
     }
 
-    public Node getNextNode() {
+    public Node<T> getNextNode() {
         return nextNode;
     }
 
