@@ -37,4 +37,8 @@ public class Queue<T> {
     public int size() {
         return getSize();
     }
+
+    public boolean isEmpty() {
+        return this.head == null;
+    }
 }
