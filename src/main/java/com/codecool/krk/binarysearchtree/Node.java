@@ -84,7 +84,7 @@ public class Node {
         Node successorParent = null;
         Node current = this.getRight();
 
-        while(current!= null){
+        while (current != null){
             successorParent = successor;
             successor = current;
             current = current.getLeft();
