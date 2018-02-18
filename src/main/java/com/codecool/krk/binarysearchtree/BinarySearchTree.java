@@ -27,11 +27,76 @@ public class BinarySearchTree {
         this.root.printInOrderPrint();
     }
 
+    public Node remove(Integer value) {
+        Node toRemove = null;
+
+        if (!contains(value)) {
+            return toRemove;
+        } else {
+            Node parent = this.root;
+            Node current = this.root;
+
+            while (current.getValue() != value) {
+                parent = current;
+
+                if (current.getValue() < value) {
+                    current = current.getLeft();
+                } else {
+                    current = current.getRight();
+                }
+            }
+
+            toRemove = current;
+
+            if (current.getLeft() == null && current.getRight() == null) {
+                if (current.equals(this.root)) {
+                    this.root = null;
+                }
+
+                if (parent.getLeft().equals(current)) {
+                    parent.setLeft(null);
+                } else {
+                    parent.setRight(null);
+                }
+
+            } else if (current.getRight() == null) {
+                if(current.equals(this.root)){
+                    this.root = current.getLeft();
+                }else if(parent.getLeft().equals(current)){
+                    parent.setLeft(current.getLeft());
+                }else{
+                    parent.setRight(current.getLeft());
+                }
+
+            } else if (current.getLeft() == null) {
+                if(current.equals(this.root)){
+                    this.root = current.getRight();
+                }else if(parent.getLeft().equals(current)){
+                    parent.setLeft(current.getRight());
+                }else{
+                    parent.setRight(current.getRight());
+                }
+
+            } else if(current.getLeft() !=null && current.getRight() !=null) {
+                Node successor = getSuccessor(current);
+                if (current.equals(this.root)) {
+                    this.root = successor;
+                } else if (parent.getLeft().equals(current)) {
+                    parent.setLeft(successor);
+                } else {
+                    parent.setRight(successor);
+                }
+                successor.setLeft(current.getLeft());
+            }
+        }
+        return toRemove;
+    }
+
     public static BinarySearchTree createBinarySearchTree(int[] sortedArray) throws IllegalArgumentException{
         if (sortedArray == null) {
             throw new IllegalArgumentException();
         }
-        
+
         int middle = (int) Math.floor(sortedArray.length / 2);
         BinarySearchTree newBinarySearchTree = new BinarySearchTree(sortedArray[middle]);
 
