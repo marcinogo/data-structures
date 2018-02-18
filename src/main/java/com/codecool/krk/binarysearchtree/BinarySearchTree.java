@@ -110,4 +110,8 @@ public class BinarySearchTree {
 
         return newBinarySearchTree;
     }
+
+    private Node getSuccessor(Node toRemove) {
+        return toRemove.getSuccessor();
+    }
 }

@@ -78,4 +78,22 @@ public class Node {
             this.right.printInOrderPrint();
         }
     }
+
+    public Node getSuccessor() {
+        Node successor = null;
+        Node successorParent = null;
+        Node current = this.getRight();
+
+        while(current!= null){
+            successorParent = successor;
+            successor = current;
+            current = current.getLeft();
+        }
+
+        if(!successor.equals(this.getRight())){
+            successorParent.setLeft(successor.getRight());
+            successor.setRight(this.getRight());
+        }
+        return successor;
+    }
 }
