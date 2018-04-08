@@ -129,6 +129,7 @@ public class DynamicArray<T> {
         }
     }
 
+    // This can be done by using external library
     private T[] copyArray() {
         T[] biggerArrayCopy = (T[]) new Object[this.size];
         int oldSize = this.dynamicArray.length;
